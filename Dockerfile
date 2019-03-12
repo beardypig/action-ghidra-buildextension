@@ -11,10 +11,9 @@ LABEL "com.github.actions.icon"="play"
 LABEL "com.github.actions.color"="green"
 
 RUN apt-get update
-RUN apt-get install -y gradle ant
-RUN gradle wrapper
-RUN chmod +x gradlew
-RUN ./gradlew wrapper --gradle-version 5.2
+RUN apt-get install -y ant
 
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["javac --version"]
+RUN wget https://services.gradle.org/distributions/gradle-5.2-bin.zip -P /tmp && \
+    unzip -d /opt/gradle /tmp/gradle-*.zip
+
+ENTRYPOINT ["/opt/gradle/gradle-5.2/gradle", "-PGHIDRA_INSTALL_DIR=/ghidra"]
