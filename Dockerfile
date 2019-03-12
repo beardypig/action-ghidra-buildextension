@@ -1,4 +1,4 @@
-FROM blacktop/ghidra:9.0
+FROM blacktop/ghidra:latest
 
 LABEL "maintainer"="beardypig <beardypig@protonmail.com>"
 LABEL "repository"="https://github.com/beardypig/ghidra-buildExtension"
