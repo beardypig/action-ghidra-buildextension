@@ -1,3 +1,2 @@
 #!/bin/sh
-sh -c "./gradlew $*"
-
+/opt/gradle/gradle-5.2/bin/gradle -PGHIDRA_INSTALL_DIR=/ghidra "$@"

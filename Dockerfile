@@ -19,4 +19,5 @@ RUN wget https://services.gradle.org/distributions/gradle-5.2-bin.zip -P /tmp \
     && unzip -d /opt/gradle /tmp/gradle-*.zip \
     && rm -rf /tmp/gradle-*.zip
 
-ENTRYPOINT ["/opt/gradle/gradle-5.2/bin/gradle -PGHIDRA_INSTALL_DIR=/ghidra"]
+ENTRYPOINT ["/entrypoint.sh"]
+
